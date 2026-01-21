@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact List</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Left side: contacts and add button -->
+    <div class="left">
+        <div class="left-header">
+            <h2>Contacts</h2>
+            <button id="openAddBtn">Add Contact</button>
+        </div>
+
+        <ul id="contactList">
+            <!-- Items will be added by JavaScript -->
+             
+        </ul>
+    </div>
+
+    <!-- Right side: details -->
+    <div class="right">
+        <div class="right-header">
+            <h2>Details</h2>
+            <div class="right-actions">
+                <button id="editBtn" disabled>Edit</button>
+                <button id="deleteBtn" disabled>Delete</button>
+            </div>
+        </div>
+
+        <p id="helpText">Click a contact on the left.</p>
+
+        <div id="detailsBox" style="display:none;">
+            <p><b>Name:</b> <span id="dName"></span></p>
+            <p><b>Number:</b> <span id="dNumber"></span></p>
+            <p><b>Email:</b> <span id="dEmail"></span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Popup modal -->
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+        <h3 id="modalTitle">Add Contact</h3>
+
+        <label>Name</label>
+        <input type="text" id="modalName" placeholder="Name">
+
+        <label>Number</label>
+        <input type="text" id="modalNumber" placeholder="Number">
+
+        <label>Email</label>
+        <input type="text" id="modalEmail" placeholder="Email">
+
+        <div class="modal-actions">
+            <button id="modalSaveBtn">Save</button>
+            <button id="modalCancelBtn">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="js.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book</title>
+    <link rel="stylesheet" href="color.css">
+</head>
+<body>
+
+<div class="top-bar">Address Book</div>
+
+<div class="menu-bar">
+    <span class="home">HOME</span>
+    <span class="add" id="openAddBtn">+ ADD CONTACT</span>
+</div>
+
+<div class="container">
+    <div class="left">
+        <h3>Contacts</h3>
+        <ul id="contactList"></ul>
+    </div>
+
+    <div class="right">
+        <h2 id="dNameTitle">Details</h2>
+        <p id="helpText">Select a contact to view details or click + ADD CONTACT to start.</p>
+
+        <div id="detailsBox" style="display:none;">
+            <div class="details-row"><b>Mobile:</b> <span id="dNumber"></span></div>
+            <div class="details-row"><b>Email:</b> <span id="dEmail"></span></div>
+            
+            <div class="actions">
+                <button id="editBtn" class="edit-btn">EDIT</button>
+                <button id="deleteBtn" class="delete-btn">DELETE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+        <h3 id="modalTitle">Add Contact</h3>
+
+        <label>Full Name</label>
+        <input type="text" id="modalName" placeholder="Full Name">
+
+        <label>Email Address</label>
+        <input type="email" id="modalEmail" placeholder="email@example.com">
+
+        <label>Mobile Number</label>
+        <input type="text" id="modalNumber" placeholder="10 digits (Starts with 6-9)">
+
+        <div class="modal-actions">
+            <button id="modalCancelBtn" class="cancel">CANCEL</button>
+            <button id="modalSaveBtn" class="save">SAVE</button>
+        </div>
+    </div>
+</div>
+
+<script src="scripptt.js"></script>
+</body>
+</html>
