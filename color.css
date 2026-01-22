@@ -22,7 +22,7 @@ body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f
 
 .left { width: 30%; border-right: 1px solid #ccc; background: white; padding: 15px; overflow-y: auto; }
 .left ul { list-style: none; padding: 0; }
-.left li { border-bottom: 1px solid #eee; padding: 10px; cursor: pointer; }
+.left li { border-bottom: 2px solid #eee; padding: 10px; cursor: pointer; }
 .left li:hover { background: #f0f0f0; }
 .left li.active { background: #bde3ee; border-left: 4px solid #1f8acb; }
 
@@ -71,7 +71,7 @@ body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f
 
 /* 5. Add visual icons via CSS content since we can't edit HTML */
 .edit-btn::before {
-    content: '✎';
+    content: '✏️';
     margin-right: 5px;
 }
 
