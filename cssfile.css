@@ -26,16 +26,18 @@ body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f
 .left li:hover { background: #f0f0f0; }
 .left li.active { background: #bde3ee; border-left: 4px solid #1f8acb; }
 
-.right { width: 70%; padding: 30px; background: white; }
-/* .details-row { font-size: 18px; margin: 15px 0; } */
-/* .details-row b { width: 100px; display: inline-block; color: #1f8acb; } */
+
+
+.right { width: 70%; padding: 30px; background: white; } 
+.details-row { font-size: 18px; margin: 15px 0; }
+.details-row b { width: 100px; display: inline-block; color: #1f8acb; } 
 
 /* BUTTONS */
-.actions { margin-top: 25px; }
-.edit-btn { background: #f0ad4e; color: white; border: none; padding: 8px 20px; cursor: pointer; margin-right: 10px; border-radius: 4px; }
-.delete-btn { background: #d9534f; color: white; border: none; padding: 8px 20px; cursor: pointer; border-radius: 4px; }
+.actions { margin-top: 25px; } 
+.edit-btn {color:black;cursor: pointer;}
+.delete-btn {color:black;cursor: pointer;}
 
-/* MODAL */
+/* MODAL
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); justify-content: center;align-items:center;   }
 .modal { background: white; padding: 25px; width: 320px; border-radius: 8px; }
 .modal input { width: 90%; padding: 8px; margin: 10px 0px;  } 

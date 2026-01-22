@@ -28,12 +28,14 @@ function render() {
 
     contacts.forEach((c, i) => {
         let li = document.createElement("li");
-        li.innerHTML = `<b>${c.name}</b><br>${c.number}`;
+        li.innerHTML = 
+           `<b style="display:block;font-size:22px;">${c.name}</b><br>
+            <span style="display:block;font-size:15px;margin-top:-17px;"> ${c.number}</span><br><span style="display:block;font-size:15px;margin-top:-17px;">${c.email}</span>`;
         li.onclick = () => show(i);
         list.appendChild(li);
     });
 }
-
+     
 function show(i) {
     editIndex = i;
     document.querySelectorAll("li").forEach(el => el.classList.remove("active"));
@@ -85,6 +87,8 @@ document.getElementById("modalSaveBtn").onclick = () => {
         alert("All fields are required!");
         return;
     }
+    console.log((localStorage.getItem("contacts")));
+    console.log(JSON.parse(localStorage.getItem("contacts")));
 
     // 2. Phone validation: Starts with 6,7,8,9 and 10 digits
     let phonePattern = /^[6-9]\d{9}$/;
