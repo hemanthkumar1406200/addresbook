@@ -108,7 +108,7 @@ document.getElementById("modalSaveBtn").onclick = () => {
     render();
     
     // If we just edited, refresh the detail view
-    // if (editIndex !== -1) show(editIndex);
+    if (editIndex !== -1) show(editIndex);
 };
 
 document.getElementById("modalCancelBtn").onclick = () => modal.style.display = "none";
