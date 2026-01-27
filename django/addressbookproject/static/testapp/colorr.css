@@ -1,0 +1,133 @@
+/* body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f4; }
+
+
+.top-bar { background: #1f8acb; color: white; padding: 20px; font-size: 26px; font-weight: bold; }
+.menu-bar { background: #333; padding: 10px 20px; }
+.home { background-color: #5cb85c; color: white; padding: 11px; margin-left: -20px; }
+.add { color: white; cursor: pointer; padding-left: 7px; }
+
+
+.container { display: flex; height: 85vh; }
+
+.left { width: 30%; border-right: 1px solid #ccc; background: white; padding: 15px; overflow-y: auto; }
+.left ul { list-style: none; padding: 0; }
+.left li { border-bottom: 2px solid #eee; padding: 15px; cursor: pointer;word-break: break-word; }
+.left li:hover { background: #f0f0f0; }
+.left li.active { background: #bde3ee; border-left: 4px solid #1f8acb; }
+
+.right { width: 70%; padding: 30px; background: white; }
+
+
+.right-header {
+    display: flex;
+    
+}
+#detailsBox{
+    display:flex;
+}
+
+#dNameTitle {
+    margin: 0;
+    font-size: 32px;
+    word-break: break-word ;
+    color: #333;
+}
+
+.actions { 
+    display: flex; 
+    gap: 15px;
+    flex-shrink: 0; Prevents buttons from shrinking 
+    margin-top: 10px;
+    margin-left:50px;
+}
+
+.edit-btn, .delete-btn { 
+    background: none; 
+    color: #444; 
+    border: none; 
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer; 
+}
+
+
+.details-row { font-size: 18px; margin-top:5px; }
+
+
+
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+.modal { background: white; padding: 25px; width: 320px; border-radius: 8px; }
+.modal input { width: 90%; padding: 8px; margin: 10px 0px; } 
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px; }
+.save { background-color: green; color: white; cursor: pointer; border: none; border-radius: 4px; padding: 8px 15px; } 
+.cancel { background-color: #666; color: white; cursor: pointer; border: none; border-radius: 4px; padding: 8px 15px; } */
+
+
+
+body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f4; }
+
+/* TOP BARS */
+.top-bar { background: #1f8acb; color: white; padding: 20px; font-size: 26px; font-weight: bold; }
+.menu-bar { background: #333; padding: 10px 20px; }
+.home { background-color: #5cb85c; color: white; padding: 11px; margin-left: -20px; }
+.add { color: white; cursor: pointer; padding-left: 7px; }
+
+/* MAIN LAYOUT */
+.container { display: flex; height: 85vh; }
+
+.left { width: 30%; border-right: 1px solid #ccc; background: white; padding: 15px; overflow-y: auto; }
+.left ul { list-style: none; padding: 0; }
+.left li { border-bottom: 2px solid #eee; padding: 15px; cursor: pointer; word-break: break-word; }
+.left li:hover { background: #f0f0f0; }
+.left li.active { background: #bde3ee; border-left: 4px solid #1f8acb; }
+
+.right { width: 70%; padding: 30px; background: white; }
+
+/* --- FLEXBOX HEADER FIX --- */
+/* This makes the Title and Buttons sit side-by-side */
+.right-header {
+    display: flex;
+    /* justify-content: space-between; Pushes name to left, buttons to right */
+    align-items: center; 
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+
+.actions { 
+    display: flex; 
+    gap: 15px;
+    flex-shrink: 0;
+     margin-top: 10px;
+    margin-left:50px; /* Prevents buttons from shrinking */
+}
+
+#dNameTitle {
+    margin: 0;
+    font-size: 32px;
+    word-break: break-word;
+    color: #333;
+}
+
+
+.edit-btn, .delete-btn { 
+    background: none; 
+    border: none; 
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer; 
+}
+
+
+.details-row { font-size: 18px; margin-top: 10px; color: #555; }
+.details-row b { color: #333; }
+
+/* MODAL */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000; }
+.modal { background: white; padding: 25px; width: 320px; border-radius: 8px; box-shadow: 0px 4px 15px rgba(0,0,0,0.2); }
+.modal h3 { margin-top: 0; color: #333; }
+.modal label { display: block; margin-top: 10px; font-weight: bold; font-size: 14px; }
+.modal input { width: 95%; padding: 10px; margin: 5px 0px; border: 1px solid #ccc; border-radius: 4px; } 
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.save { background-color: #5cb85c; color: white; cursor: pointer; border: none; border-radius: 4px; padding: 10px 20px; font-weight: bold; } 
+.cancel { background-color: #666; color: white; cursor: pointer; border: none; border-radius: 4px; padding: 10px 20px; }

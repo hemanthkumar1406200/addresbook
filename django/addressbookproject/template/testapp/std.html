@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book - MySQL</title>
+    <link rel="stylesheet" href="{% static 'testapp/colorr.css' %}">
+</head>
+<body>
+
+<div class="top-bar">Address Book</div>
+
+<div class="menu-bar">
+    <span class="home"><b>HOME</b></span>
+    <span class="add" id="openAddBtn"><b>+ ADD</b></span>
+</div>
+
+<div class="container">
+    <div class="left">
+        <h3>Contacts</h3>
+        <ul id="contactList">
+            {% for s in students %}
+            <li onclick="showDetails('{{ s.name }}', '{{ s.number }}', '{{ s.email }}', '{{ s.id }}')">
+                <b style="display:block;font-size:22px;">{{ s.name }}</b><br>
+                <span style="display:block;font-size:15px;margin-top:-17px;">{{ s.number }}</span><br>
+                <span style="display:block;font-size:15px;margin-top:-17px;word-break: break-word;">{{ s.email }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <div class="right">
+    <p id="helpText">Select a contact to view details or click + ADD CONTACT to start.</p>
+
+    <div id="detailsBox" style="display:none;">
+        <div class="right-header">
+            <h2 id="dNameTitle"></h2>
+            <div class="actions">
+                <button id="editBtn" class="edit-btn">EDIT</button>
+                <a id="deleteLink" href="#" onclick="return confirm('Delete this contact?')">
+                    <button class="delete-btn">DELETE</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="details-row"><b>Mobile:</b> <span id="dNumber"></span></div>
+        <div class="details-row"><b>Email:</b> <span id="dEmail"></span></div>
+    </div>
+</div>
+
+    <!-- <div class="right">
+        <h2 id="dNameTitle">Details</h2>
+        <p id="helpText">Select a contact to view details or click + ADD CONTACT to start.</p>
+
+        <div id="detailsBox" style="display:none;">
+            <div class="details-row">Mobile: <span id="dNumber"></span></div>
+            <div class="details-row">Email: <span id="dEmail"></span></div>
+
+            <div class="actions">
+                <button id="editBtn" class="edit-btn">EDIT</button>
+                <a id="deleteLink" href="#" onclick="return confirm('Delete this contact?')">
+                    <button class="delete-btn">DELETE</button>
+                </a>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+        <h3 id="modalTitle">Add</h3>
+
+        <form method="POST" id="contactForm">
+            {% csrf_token %}
+            <input type="hidden" name="student_id" id="student_id">
+
+            <label>Full Name</label>
+            <input type="text" name="name" id="modalName"  placeholder="Full Name">
+
+            <label>Email Address</label>
+            <input type="email" name="email" id="modalEmail"  placeholder="email@example.com">
+
+            <label>Mobile Number</label>
+            <input type="text" name="number" id="modalNumber"  placeholder="10 digits">
+
+            <div class="modal-actions">
+                <button type="button" id="modalCancelBtn" class="cancel">CANCEL</button>
+                <button type="submit" class="save">SAVE</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="{% static 'testapp/scrip.js' %}"></script>
+</body>
+</html>
