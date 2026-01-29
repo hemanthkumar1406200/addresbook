@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,25 +5,23 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 body {
     background-color: #fff9f0; 
     color: #333;
+    overflow-x: hidden;
 }
-
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-    background: transparent;
+    padding: 13px 8%;
+    background: white;
+    border-bottom: 2px solid #dfe2e4a8; 
 }
 
 nav {
     display: flex;
-    align-items: center;
-    gap: 30px;
 }
 
 nav ul {
@@ -35,23 +32,25 @@ nav ul {
 
 nav ul li a {
     text-decoration: none; 
-      color: #555;
-    font-weight: 500;  */
+    color: #555;
+    font-weight: 500;
 }
 
-/* nav ul li a.active {
+nav ul li a.active {
     color: #ff8c00;
-} */
+}
 
 .login-btn {
     background-color: #ff8c00;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 15px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 20px;
 }
+
 
 
 .hero {
@@ -61,23 +60,24 @@ nav ul li a {
     padding: 50px 8%;
     min-height: 80vh;
 }
- 
+
 .hero-content {
     flex: 1;
-    max-width: 500px;
-} 
+    max-width: 550px;
+    position: relative;
+    min-height: 400px;
+    overflow: hidden; 
+}
 
-.subtitle {
+.highlight {
     color: #ff8c00;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin: 15px 0;
-    color: #ff8c00;
+    color: #333; 
     line-height: 1.2;
 }
 
@@ -87,17 +87,70 @@ nav ul li a {
     margin-bottom: 30px;
 }
 
+.subtitle {
+    color: #ff8c00;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    display: block;
+}
+
+/* --- Animation: Left-to-Right --- */
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+   
+     transform: translateX(-100px); 
+    transition: opacity 0.6s ease-in-out,
+     transform 0.6s ease-in-out; 
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);  
+    position: relative; 
+}
+
+/* When a slide leaves, it moves to the RIGHT */
+.slide:not(.active) {
+    transform: translateX(100px);
+}
+
+.slider-dots {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.dot.active {
+    color: #ff8c00;
+}
 
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .hero-image img {
     width: 100%;
+    max-width: 500px;
     height: auto;
 }
-
-
-
